@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>django hello</title>
+</head>
+<body>
+    <h1>{{ hello }}</h1>
+    {{ hello | lower }} <br/>
+    {{ hello | first | upper }}<br/>
+    {{ hello | truncatechars:'10' }}
+</body>
+</html>
