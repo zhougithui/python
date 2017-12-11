@@ -1,22 +1,23 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""" a test module """
-
-__author__ = 'zmy'
+#! /usr/bin/evn python
 
 
 class Student(object):
-    def __init__(self, name, age):
-        self.__name = name
-        self.__age = age
+    __slots__ = ('__birth', '__age')
 
-    def tostring(self):
-        print('student name=%s, age= %s' % (self.__name, self.__age))
+    @property
+    def birth(self):
+        return self.__birth
+
+    @birth.setter
+    def birth(self, value):
+        self.__birth = value
+
+    @property
+    def age(self):
+        return 2015 - self.__birth
 
 
 if __name__ == '__main__':
-    zmy = Student('zmy', 18)
-    zmy.tostring()
-
-
+    stu = Student()
+    stu.birth = 1991
+    print(stu.age)
